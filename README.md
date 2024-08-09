@@ -36,14 +36,15 @@
 
 <h2>Code Explanation</h2>
 
-    <h3>Importing the Data</h3>
+<h3>Importing the Data</h3>
     <pre><code>
 import pandas as pd
 
-# Load and inspect data
+<h3> Load and inspect data </h3>
+    </code></pre>
 data = pd.read_csv("dji.csv", parse_dates=["Date"], index_col="Date")
 df = data.loc["2010-01-01":"2020-03-31", "Close"].to_frame()
-    </code></pre>
+
 
 <h3>Data Visualization & Returns</h3>
     <pre><code>
