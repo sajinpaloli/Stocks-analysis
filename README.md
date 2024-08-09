@@ -1,7 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Backtesting Investment Strategies (US Stocks)</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1, h2, h3 { color: #333; }
+        pre { background-color: #f4f4f4; padding: 10px; border-left: 4px solid #ddd; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+        ul { list-style-type: disc; padding-left: 20px; }
+        .note { background-color: #e7f0ff; border-left: 4px solid #007bff; padding: 10px; margin: 10px 0; }
+    </style>
 </head>
 <body>
     <h1>Backtesting Investment Strategies (US Stocks)</h1>
@@ -40,11 +50,10 @@
     <pre><code>
 import pandas as pd
 
-<h3> Load and inspect data </h3>
-    </code></pre>
+# Load and inspect data
 data = pd.read_csv("dji.csv", parse_dates=["Date"], index_col="Date")
 df = data.loc["2010-01-01":"2020-03-31", "Close"].to_frame()
-
+    </code></pre>
 
 <h3>Data Visualization & Returns</h3>
     <pre><code>
@@ -150,10 +159,12 @@ summary_ann(df[["Return", "Strategy_Ret"]])
     </code></pre>
 
 <h2>Notes</h2>
-    <ul>
-        <li><strong>Backtesting vs. Fitting:</strong> Strategies should not be overly fitted to historical data. Forward testing is necessary to validate performance.</li>
-        <li><strong>Transaction Costs:</strong> Costs associated with changing positions should be included in the analysis.</li>
-        <li><strong>Tax Effects:</strong> Be aware of potential tax implications from frequent trading.</li>
-    </ul>
+    <div class="note">
+        <ul>
+            <li><strong>Backtesting vs. Fitting:</strong> Strategies should not be overly fitted to historical data. Forward testing is necessary to validate performance.</li>
+            <li><strong>Transaction Costs:</strong> Costs associated with changing positions should be included in the analysis.</li>
+            <li><strong>Tax Effects:</strong> Be aware of potential tax implications from frequent trading.</li>
+        </ul>
+    </div>
 </body>
 </html>
